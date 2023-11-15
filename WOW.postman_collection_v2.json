@@ -1,0 +1,566 @@
+{
+	"item": [
+		{
+			"name": "best deals",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"all\",\n    \"region\": \"NA\",\n    \"discount\": 90,\n    \"salesPerDay\": 4.1,\n    \"minPrice\": 1000,\n    \"item_class\": -1,\n    \"item_subclass\": -1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api.saddlebagexchange.com/api/wow/bestdeals",
+					"protocol": "http",
+					"host": [
+						"api.saddlebagexchange.com"
+					],
+					"path": [
+						"api",
+						"wow",
+						"bestdeals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "shopping list",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"region\": \"NA\",\r\n    \"itemID\": 152413,\r\n    \"maxPurchasePrice\": 1195000,\r\n    \"connectedRealmIDs\": {}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api.saddlebagexchange.com/api/wow/shoppinglist",
+					"protocol": "http",
+					"host": [
+						"api.saddlebagexchange.com"
+					],
+					"path": [
+						"api",
+						"wow",
+						"shoppinglist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "export - server pop",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"region\": \"NA\",\n    \"itemID\": 844,\n    \"populationWP\": 3000,\n    \"populationBlizz\": 1,\n    \"rankingWP\": 90,\n    \"minPrice\": 3000,\n    \"maxQuantity\": 1000,\n    \"sortBy\": \"minPrice\",\n    \"connectedRealmIDs\": {}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api.saddlebagexchange.com/api/wow/export",
+					"protocol": "http",
+					"host": [
+						"api.saddlebagexchange.com"
+					],
+					"path": [
+						"api",
+						"wow",
+						"export"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "wow-undercut region",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n    \"region\": \"NA\",\n    \"homeRealmID\": 76,\n    \"addonData\": [{\n    \"homeRealmName\": \"119\",\n    \"region\": \"US\",\n    \"user_auctions\": [\n        {\"itemID\": 194020, \"price\": 38000000, \"auctionID\": 1466917308},\n        {\"itemID\": 200470, \"price\": 150000000, \"auctionID\": 1466917691}\n    ]\n},{\n    \"homeRealmName\": \"1263\",\n    \"region\": \"US\",\n    \"user_auctions\": [\n    ]\n},{\n    \"homeRealmName\": \"1566\",\n    \"region\": \"US\",\n    \"user_auctions\": [\n        {\"itemID\": 206582, \"price\": 65000000, \"auctionID\": 1466978377}\n    ]\n},{\n    \"homeRealmName\": \"1293\",\n    \"region\": \"US\",\n    \"user_auctions\": [\n        {\"itemID\": 200470, \"price\": 39993100, \"auctionID\": 1466964208},\n        {\"itemID\": 194018, \"price\": 47759700, \"auctionID\": 1466975290},\n        {\"itemID\": 194020, \"price\": 49850200, \"auctionID\": 1466963394}\n    ]\n},{\n    \"homeRealmName\": \"1263\",\n    \"region\": \"US\",\n    \"user_auctions\": [ \n    ]\n},{\n    \"homeRealmName\": \"1371\",\n    \"region\": \"US\",\n    \"user_auctions\": [\n        {\"itemID\": 194020, \"price\": 30000000, \"auctionID\": 1466923817},\n        {\"itemID\": 194018, \"price\": 36505100, \"auctionID\": 1466925622},\n        {\"itemID\": 200470, \"price\": 39995100, \"auctionID\": 1466924236}\n    ]\n}]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api.saddlebagexchange.com/api/wow/regionundercut",
+					"protocol": "http",
+					"host": [
+						"api.saddlebagexchange.com"
+					],
+					"path": [
+						"api",
+						"wow",
+						"regionundercut"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "wow-undercut",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"homeRealmName\": \"12163\",\n    \"region\": \"US\",\n    \"user_auctions\": [\n        {\"itemID\": 200470, \"price\": 33339400, \"auctionID\": 1368436224},\n        {\"itemID\": 90655 ,\"price\": 215000000, \"auctionID\": 1217980413},\n        {\"itemID\": 72145 ,\"price\": 750007300, \"auctionID\": 1217980413},\n        {\"itemID\": 159840 ,\"price\": 999999800, \"auctionID\": 1217980413}\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api.saddlebagexchange.com/api/wow/undercut",
+					"protocol": "http",
+					"host": [
+						"api.saddlebagexchange.com"
+					],
+					"path": [
+						"api",
+						"wow",
+						"undercut"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "uploadtimers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api.saddlebagexchange.com/api/wow/uploadtimers",
+					"protocol": "http",
+					"host": [
+						"api.saddlebagexchange.com"
+					],
+					"path": [
+						"api",
+						"wow",
+						"uploadtimers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "marketshare",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n    \"homeRealmId\": 3678,\n    \"region\": \"NA\",\n    \"commodity\": true,\n\n    \"desired_avg_price\": 0,\n    \"desired_sales_per_day\": 10,\n\n    \"itemQuality\": 1,\n    \"required_level\": -1,\n    \"item_class\": -1,\n    \"item_subclass\": -1,\n    \"ilvl\": -1\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api.saddlebagexchange.com/api/wow/itemstats",
+					"protocol": "http",
+					"host": [
+						"api.saddlebagexchange.com"
+					],
+					"path": [
+						"api",
+						"wow",
+						"itemstats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "legacymarket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"homeRealmId\": 3678,\n    \"desired_avg_price\": 1000000,\n    \"desired_sales_per_day\": 4,\n    \"item_class\": -1,\n    \"item_subclass\": -1,\n    \"sort_by\": \"currentMarketValue\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api.saddlebagexchange.com/api/wow/legacymarket",
+					"protocol": "http",
+					"host": [
+						"api.saddlebagexchange.com"
+					],
+					"path": [
+						"api",
+						"wow",
+						"legacymarket"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pet marketshare",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"region\": \"NA\",\n    \"homeRealmName\": \"Sargeras\",\n    \"minPrice\": 1000,\n    \"salesPerDay\": 1,\n    \"includeCategories\": [],\n    \"excludeCategories\": [],\n    \"sortBy\": \"estimatedRegionMarketValue\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api.saddlebagexchange.com/api/wow/petmarketshare",
+					"protocol": "http",
+					"host": [
+						"api.saddlebagexchange.com"
+					],
+					"path": [
+						"api",
+						"wow",
+						"petmarketshare"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listings",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n    \"homeRealmId\": 3678,\n    \"region\": \"NA\",\n    \"itemID\": 194671\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api.saddlebagexchange.com/api/wow/listings",
+					"protocol": "http",
+					"host": [
+						"api.saddlebagexchange.com"
+					],
+					"path": [
+						"api",
+						"wow",
+						"listings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NAMES",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api.saddlebagexchange.com/api/wow/itemnames",
+					"protocol": "http",
+					"host": [
+						"api.saddlebagexchange.com"
+					],
+					"path": [
+						"api",
+						"wow",
+						"itemnames"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Item Data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ilvl\": 201,\n    \"itemQuality\": -1,\n    \"required_level\": -1,\n    \"item_class\": [2,4],\n    \"item_subclass\": [-1]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api.saddlebagexchange.com/api/wow/itemdata",
+					"protocol": "http",
+					"host": [
+						"api.saddlebagexchange.com"
+					],
+					"path": [
+						"api",
+						"wow",
+						"itemdata"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pricecheck",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"region\": \"NA\",\n  \"homeRealmName\": \"Thrall\",\n  \"user_auctions\": [\n    {\"itemID\":194123,\"price\":18000,\"desired_state\":\"below\"},\n    {\"itemID\":200036,\"price\":2000000,\"desired_state\":\"above\"},\n    {\"itemID\":198715,\"price\":3000000,\"desired_state\":\"above\"},\n    {\"itemID\":194018,\"price\":9990000,\"desired_state\":\"above\"},\n    {\"itemID\":194057,\"price\":9990000,\"desired_state\":\"above\"},\n    {\"itemID\":200469,\"price\":22220000,\"desired_state\":\"above\"},\n\n    {\"itemID\":200031,\"price\":2790000,\"desired_state\":\"above\"},\n    {\"itemID\":200032,\"price\":2790000,\"desired_state\":\"above\"},\n    {\"itemID\":200033,\"price\":2790000,\"desired_state\":\"above\"},\n\n    { \"itemID\": 200037, \"price\": 2790000, \"desired_state\": \"above\" },\n    { \"itemID\": 200038, \"price\": 2790000, \"desired_state\": \"above\" },\n    { \"itemID\": 200039, \"price\": 2790000, \"desired_state\": \"above\" },\n    { \"itemID\": 200040, \"price\": 2790000, \"desired_state\": \"above\" },\n\n    {\"itemID\":200022,\"price\":2790000,\"desired_state\":\"above\"},\n    {\"itemID\":200023,\"price\":2790000,\"desired_state\":\"above\"},\n    {\"itemID\":200024,\"price\":2790000,\"desired_state\":\"above\"},\n\n    { \"itemID\": 194016, \"price\": 200000000, \"desired_state\": \"above\" },\n    { \"itemID\": 194013, \"price\": 200000000, \"desired_state\": \"above\" },\n\n    { \"itemID\": 193934, \"price\": 3000000, \"desired_state\": \"above\" },\n\n    { \"itemID\": 194641, \"price\": 3999930100, \"desired_state\": \"below\" },\n\n    { \"itemID\": 201320, \"price\": 170000, \"desired_state\": \"above\" },\n    { \"itemID\": 201314, \"price\": 150000, \"desired_state\": \"above\" },\n    { \"itemID\": 201311, \"price\": 150000, \"desired_state\": \"above\" },\n    { \"itemID\": 200615, \"price\": 170000, \"desired_state\": \"above\" },\n    { \"itemID\": 201317, \"price\": 150000, \"desired_state\": \"above\" },\n\n    { \"itemID\": 201319, \"price\": 3330000, \"desired_state\": \"above\" },\n    { \"itemID\": 200616, \"price\": 2000000, \"desired_state\": \"above\" },\n    { \"itemID\": 201310, \"price\": 300000, \"desired_state\": \"above\" },\n    { \"itemID\": 201316, \"price\": 3000000, \"desired_state\": \"above\" },\n    { \"itemID\": 201313, \"price\": 3000000, \"desired_state\": \"above\" },\n\n    { \"itemID\": 193943, \"price\": 4500000, \"desired_state\": \"above\" },\n    { \"itemID\": 193946, \"price\": 12000000, \"desired_state\": \"above\" },\n    { \"itemID\": 201405, \"price\": 990000, \"desired_state\": \"below\" },\n    { \"itemID\": 193940, \"price\": 3000000, \"desired_state\": \"below\" },\n\n    { \"itemID\": 200051, \"price\": 13000000, \"desired_state\": \"above\" },\n    { \"itemID\": 200055, \"price\": 38000000, \"desired_state\": \"above\" },\n    { \"itemID\": 200053, \"price\": 33000000, \"desired_state\": \"above\" },\n    { \"itemID\": 200059, \"price\": 13000000, \"desired_state\": \"above\" },\n    { \"itemID\": 200057, \"price\": 29000000, \"desired_state\": \"above\" },\n    \n    { \"itemID\": 200634, \"price\": 7770000, \"desired_state\": \"above\" }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api.saddlebagexchange.com/api/wow/pricecheck",
+					"protocol": "http",
+					"host": [
+						"api.saddlebagexchange.com"
+					],
+					"path": [
+						"api",
+						"wow",
+						"pricecheck"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "regionpricecheck",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"region\":\"EU\",\n\"user_auctions\":[\n{\"itemID\":147428,\"price\":250000000,\"desired_state\":\"below\"},\n{\"itemID\":118874,\"price\":1000000000,\"desired_state\":\"below\"},\n{\"itemID\":124277,\"price\":250000000,\"desired_state\":\"below\"},\n{\"itemID\":147429,\"price\":250000000,\"desired_state\":\"below\"},\n{\"itemID\":31318,\"price\":250000000,\"desired_state\":\"below\"},\n{\"itemID\":31331,\"price\":750000000,\"desired_state\":\"below\"},\n{\"itemID\":147423,\"price\":250000000,\"desired_state\":\"below\"},\n{\"itemID\":159840,\"price\":250000000,\"desired_state\":\"below\"},\n{\"itemID\":153018,\"price\":250000000,\"desired_state\":\"below\"},\n{\"itemID\":165518,\"price\":250000000,\"desired_state\":\"below\"},\n{\"itemID\":152413,\"price\":750000000,\"desired_state\":\"below\"},\n{\"itemID\":165765,\"price\":250000000,\"desired_state\":\"below\"},\n{\"itemID\":147422,\"price\":100000000,\"desired_state\":\"below\"},\n{\"itemID\":153019,\"price\":100000000,\"desired_state\":\"below\"},\n{\"itemID\":146989,\"price\":100000000,\"desired_state\":\"below\"},\n{\"itemID\":183616,\"price\":10000000,\"desired_state\":\"below\"},\n{\"itemID\":9385,\"price\":5000000,\"desired_state\":\"below\"},\n{\"itemID\":31336,\"price\":250000000,\"desired_state\":\"below\"},\n{\"itemID\":2801,\"price\":750000000,\"desired_state\":\"below\"},\n{\"itemID\":94213,\"price\":7500000,\"desired_state\":\"below\"},\n{\"itemID\":1604,\"price\":50000000,\"desired_state\":\"below\"},\n{\"itemID\":187097,\"price\":250000000,\"desired_state\":\"below\"},\n{\"itemID\":147425,\"price\":100000000,\"desired_state\":\"below\"},\n{\"itemID\":124182,\"price\":100000000,\"desired_state\":\"below\"},\n{\"itemID\":147064,\"price\":100000000,\"desired_state\":\"below\"},\n{\"itemID\":166844,\"price\":500000000,\"desired_state\":\"below\"},\n{\"itemID\":164561,\"price\":250000000,\"desired_state\":\"below\"},\n{\"itemID\":147424,\"price\":200000000,\"desired_state\":\"below\"},\n{\"itemID\":59467,\"price\":100000000,\"desired_state\":\"below\"},\n{\"itemID\":152090,\"price\":50000000,\"desired_state\":\"below\"},\n{\"itemID\":161076,\"price\":100000000,\"desired_state\":\"below\"},\n{\"itemID\":9429,\"price\":1000000000,\"desired_state\":\"below\"},\n{\"itemID\":9431,\"price\":1000000000,\"desired_state\":\"below\"},\n{\"itemID\":9425,\"price\":1000000000,\"desired_state\":\"below\"},\n{\"itemID\":23540,\"price\":100000000,\"desired_state\":\"below\"},\n{\"itemID\":164438,\"price\":250000000,\"desired_state\":\"below\"},\n{\"itemID\":44703,\"price\":250000000,\"desired_state\":\"below\"},\n{\"itemID\":190735,\"price\":1500000000,\"desired_state\":\"below\"},\n{\"itemID\":163928,\"price\":750000000,\"desired_state\":\"below\"},\n{\"itemID\":52252,\"price\":500000000,\"desired_state\":\"below\"},\n{\"itemID\":147038,\"price\":150000000,\"desired_state\":\"below\"},\n{\"itemID\":164431,\"price\":250000000,\"desired_state\":\"below\"},\n{\"itemID\":13895,\"price\":250000000,\"desired_state\":\"below\"},\n{\"itemID\":22282,\"price\":250000000,\"desired_state\":\"below\"},\n{\"itemID\":190626,\"price\":750000000,\"desired_state\":\"below\"},\n{\"itemID\":164433,\"price\":250000000,\"desired_state\":\"below\"}\n]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api.saddlebagexchange.com/api/wow/regionpricecheck",
+					"protocol": "http",
+					"host": [
+						"api.saddlebagexchange.com"
+					],
+					"path": [
+						"api",
+						"wow",
+						"regionpricecheck"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "quantitycheck",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"region\": \"NA\",\n  \"homeRealmName\": \"Thrall\",\n  \"user_auctions\": [\n    { \"itemID\": 204975, \"quantity\": 1, \"desired_state\": \"above\" },\n    { \"itemID\": 201310, \"quantity\": 100, \"desired_state\": \"below\" },\n    { \"itemID\": 194018, \"quantity\": 100,\"desired_state\":\"below\"},\n    { \"itemID\": 200616, \"quantity\": 100, \"desired_state\": \"below\" },\n    { \"itemID\": 200634, \"quantity\": 100, \"desired_state\": \"below\" }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api.saddlebagexchange.com/api/wow/quantitycheck",
+					"protocol": "http",
+					"host": [
+						"api.saddlebagexchange.com"
+					],
+					"path": [
+						"api",
+						"wow",
+						"quantitycheck"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "server to server trade",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n    \"homeRealmId\": 3676,\n    \"newRealmId\": 3678,\n    \"min_historic_price\": 1000,\n    \"desired_roi\": 1,\n    \"sale_per_day\": 0,\n\n    \"itemQuality\": -1,\n    \"required_level\": -1,\n    \"item_class\": -1,\n    \"item_subclass\": -1,\n    \"ilvl\": -1\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api.saddlebagexchange.com/api/wow/scan",
+					"protocol": "http",
+					"host": [
+						"api.saddlebagexchange.com"
+					],
+					"path": [
+						"api",
+						"wow",
+						"scan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "commodity",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"desired_avg_price\": 50,\n    \"desired_sales_per_day\": 40,\n    \"desired_price_increase\": 50,\n    \"desired_sell_price\": 200,\n    \"flip_risk_limit\": 10,\n    \"under_market_price_percent\": 0,\n    \"over_market_price_percent\": 0,\n\n    \"itemQuality\": -1,\n    \"item_class\": -1,\n    \"item_subclass\": -1,\n    \"region\": \"EU\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api.saddlebagexchange.com/api/wow/commodity",
+					"protocol": "http",
+					"host": [
+						"api.saddlebagexchange.com"
+					],
+					"path": [
+						"api",
+						"wow",
+						"commodity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "single",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n    \"homeRealmId\": 3678,\n    \"desired_avg_price\": 20,\n    \"desired_sales_per_day\": 2,\n    \"desired_price_increase\": 100,\n    \"desired_sell_price\": 40,\n    \"flip_risk_limit\": 100,\n    \"under_market_price_percent\": 0,\n    \"over_market_price_percent\": 50,\n\n    \"itemQuality\": 1,\n    \"required_level\": -1,\n    \"item_class\": -1,\n    \"item_subclass\": -1,\n    \"ilvl\": -1\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api.saddlebagexchange.com/api/wow/single",
+					"protocol": "http",
+					"host": [
+						"api.saddlebagexchange.com"
+					],
+					"path": [
+						"api",
+						"wow",
+						"single"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "commodity futures",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"desired_avg_price\": 200000,\n    \"desired_sales_per_day\": 200,\n    \"itemQuality\": 1,\n    \"item_class\": -1,\n    \"item_subclass\": -1,\n    \"region\": \"EU\",\n    \"homeRealmName\": \"Thrall\",\n\n    \"desired_price_vs_avg_percent\": 120,\n    \"desired_quantity_vs_avg_percent\": 50\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api.saddlebagexchange.com/api/wow/commodityfutures",
+					"protocol": "http",
+					"host": [
+						"api.saddlebagexchange.com"
+					],
+					"path": [
+						"api",
+						"wow",
+						"commodityfutures"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

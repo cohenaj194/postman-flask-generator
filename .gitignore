@@ -1,0 +1,21 @@
+# IDE
+.vscode
+.DS_Store
+.dccache
+
+# Python
+.venv
+__pycache__
+.pytestcache
+
+# Secrets
+.secrets
+.env
+certs/
+
+*.txt
+*.log*
+
+# Generated files
+app.py
+templates/*
