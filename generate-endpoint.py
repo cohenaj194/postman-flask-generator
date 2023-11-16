@@ -128,7 +128,7 @@ def main():
         print(f"ERROR: {postman_file_name} does not exist")
         exit(1)
 
-    # if the file doesn't exist in the currrent dir then copy it in from the parent dir
+    # if the file doesn't exist in the current dir then copy it in from the parent dir
     if not os.path.isfile(postman_file_name):
         os.system(f"cp {postman_file_name} .")
         # then remove the path from the filename
