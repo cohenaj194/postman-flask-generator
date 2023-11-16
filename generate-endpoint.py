@@ -1,5 +1,6 @@
 import os
 import json
+import sys
 
 def generate_html_template(request_item, output_path):
     template = f"""<!DOCTYPE html>
@@ -92,11 +93,11 @@ def {route_name}():
         return jsonify(response)
 """
 
-    app_code += """
+    app_code += f"""
 @app.route("/", methods=["GET"])
 def index():
-    postman_data = json.loads(open("WOW.postman_collection_v2.json", "r").read())
-    routes = [f"/{item['name'].lower().replace(' ', '_').replace('-', '')}" for item in postman_data['item']]
+    postman_data = json.loads(open("{postman_file_name}", "r").read())
+    routes = [f"/{"{item['name'].lower().replace(' ', '_').replace('-', '')}"}" for item in postman_data['item']]
     return render_template("index.html", routes=routes)
 """
 
@@ -110,8 +111,11 @@ if __name__ == "__main__":
         app_file.write(app_code)
 
 def main():
+    global postman_file_name
+    # make postman_file_name from the command line argument or default to WOW.postman_collection_v2.json
+    postman_file_name = sys.argv[1] if len(sys.argv) > 1 else "WOW.postman_collection_v2.json"
     script_directory = os.path.dirname(os.path.abspath(__file__))
-    postman_file_path = os.path.join(script_directory, "WOW.postman_collection_v2.json")
+    postman_file_path = os.path.join(script_directory, postman_file_name)
     output_folder = script_directory
 
     with open(postman_file_path, 'r') as postman_file:
