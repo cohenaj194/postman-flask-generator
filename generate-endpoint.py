@@ -1,5 +1,6 @@
 import os
 import json
+import sys
 
 def generate_html_template(request_item, output_path):
     template = f"""<!DOCTYPE html>
@@ -52,6 +53,12 @@ def generate_flask_app(postman_data, output_path):
 import requests, json
 
 app = Flask(__name__)
+
+def str_to_bool(bool_str):
+    if bool_str.lower() == "true":
+        return True
+    else:
+        return False
 """
 
     for item in postman_data['item']:
@@ -63,25 +70,28 @@ def {route_name}():
         return render_template("{route_name}_form.html")
     elif request.method == "POST":
         json_data = {{
-    """
+"""
 
         try:
             # Attempt to parse raw data as JSON
             json_data = json.loads(item['request']['body']['raw'])
             for param in json_data:
                 if isinstance(json_data[param], str):
-                    app_code += f'        "{param}": request.form.get("{param}"),\n'
+                    app_code += f'            "{param}": request.form.get("{param}"),\n'
+                # must do this before the int check as bools are ints
+                elif isinstance(json_data[param], bool):
+                    app_code += f'            "{param}": str_to_bool(request.form.get("{param}")),\n'
                 elif isinstance(json_data[param], int):
-                    app_code += f'        "{param}": int(request.form.get("{param}")),\n'
+                    app_code += f'            "{param}": int(request.form.get("{param}")),\n'
                 elif isinstance(json_data[param], float):
-                    app_code += f'        "{param}": float(request.form.get("{param}")),\n'
+                    app_code += f'            "{param}": float(request.form.get("{param}")),\n'
                 else:
-                    app_code += f'        "{param}": {json_data[param]},\n'
+                    app_code += f'            "{param}": {json_data[param]},\n'
         except json.JSONDecodeError:
             # Handle other cases if needed
             pass
 
-        app_code += f"""    }}
+        app_code += f"""        }}
 
         response = requests.post(
             "{item['request']['url']['raw']}",
@@ -92,11 +102,11 @@ def {route_name}():
         return jsonify(response)
 """
 
-    app_code += """
+    app_code += f"""
 @app.route("/", methods=["GET"])
 def index():
-    postman_data = json.loads(open("WOW.postman_collection_v2.json", "r").read())
-    routes = [f"/{item['name'].lower().replace(' ', '_').replace('-', '')}" for item in postman_data['item']]
+    postman_data = json.loads(open("{postman_file_name}", "r").read())
+    routes = [f"/{"{item['name'].lower().replace(' ', '_').replace('-', '')}"}" for item in postman_data['item']]
     return render_template("index.html", routes=routes)
 """
 
@@ -110,15 +120,32 @@ if __name__ == "__main__":
         app_file.write(app_code)
 
 def main():
+    global postman_file_name
+    # make postman_file_name from the command line argument or default to WOW.postman_collection_v2.json
+    postman_file_name = sys.argv[1] if len(sys.argv) > 1 else "WOW.postman_collection_v2.json"
+    # if the file doesnt exist then warn and exit
+    if not os.path.isfile(postman_file_name):
+        print(f"ERROR: {postman_file_name} does not exist")
+        exit(1)
+
+    # if the file doesn't exist in the current dir then copy it in from the parent dir
+    if not os.path.isfile(postman_file_name):
+        os.system(f"cp {postman_file_name} .")
+        # then remove the path from the filename
+        postman_file_name = os.path.basename(postman_file_name)
     script_directory = os.path.dirname(os.path.abspath(__file__))
-    postman_file_path = os.path.join(script_directory, "WOW.postman_collection_v2.json")
+    postman_file_path = os.path.join(script_directory, postman_file_name)
     output_folder = script_directory
 
     with open(postman_file_path, 'r') as postman_file:
         postman_data = json.load(postman_file)
 
     for item in postman_data['item']:
-        generate_html_template(item, output_folder)
+        try:
+            if item['request']['method'] == "POST" and item['request']['body']['options'] == {'raw': {'language': 'json'}}:
+                generate_html_template(item, output_folder)
+        except KeyError:
+            continue
 
     generate_flask_app(postman_data, os.path.join(output_folder, "app.py"))
     os.system("cp index.html templates/")

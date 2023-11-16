@@ -19,3 +19,5 @@ certs/
 # Generated files
 app.py
 templates/*
+openapi-spec.yml
+.nightvision-scan.yml
