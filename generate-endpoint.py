@@ -70,28 +70,28 @@ def {route_name}():
         return render_template("{route_name}_form.html")
     elif request.method == "POST":
         json_data = {{
-    """
+"""
 
         try:
             # Attempt to parse raw data as JSON
             json_data = json.loads(item['request']['body']['raw'])
             for param in json_data:
                 if isinstance(json_data[param], str):
-                    app_code += f'        "{param}": request.form.get("{param}"),\n'
+                    app_code += f'            "{param}": request.form.get("{param}"),\n'
                 # must do this before the int check as bools are ints
                 elif isinstance(json_data[param], bool):
-                    app_code += f'        "{param}": str_to_bool(request.form.get("{param}")),\n'
+                    app_code += f'            "{param}": str_to_bool(request.form.get("{param}")),\n'
                 elif isinstance(json_data[param], int):
-                    app_code += f'        "{param}": int(request.form.get("{param}")),\n'
+                    app_code += f'            "{param}": int(request.form.get("{param}")),\n'
                 elif isinstance(json_data[param], float):
-                    app_code += f'        "{param}": float(request.form.get("{param}")),\n'
+                    app_code += f'            "{param}": float(request.form.get("{param}")),\n'
                 else:
-                    app_code += f'        "{param}": {json_data[param]},\n'
+                    app_code += f'            "{param}": {json_data[param]},\n'
         except json.JSONDecodeError:
             # Handle other cases if needed
             pass
 
-        app_code += f"""    }}
+        app_code += f"""        }}
 
         response = requests.post(
             "{item['request']['url']['raw']}",
