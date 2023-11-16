@@ -141,7 +141,11 @@ def main():
         postman_data = json.load(postman_file)
 
     for item in postman_data['item']:
-        generate_html_template(item, output_folder)
+        try:
+            if item['request']['method'] == "POST" and item['request']['body']['options'] == {'raw': {'language': 'json'}}:
+                generate_html_template(item, output_folder)
+        except KeyError:
+            continue
 
     generate_flask_app(postman_data, os.path.join(output_folder, "app.py"))
     os.system("cp index.html templates/")
