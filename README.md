@@ -8,3 +8,10 @@ Replace `WOW.postman_collection_v2.json` with your own postman file and change t
 python3 generate-endpoint.py
 python3 app.py
 ```
+
+Then run the nightvision script in another terminal
+
+```
+nightvision login
+./nightvision.sh
+```
