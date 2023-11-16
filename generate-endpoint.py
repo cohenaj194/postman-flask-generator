@@ -114,6 +114,16 @@ def main():
     global postman_file_name
     # make postman_file_name from the command line argument or default to WOW.postman_collection_v2.json
     postman_file_name = sys.argv[1] if len(sys.argv) > 1 else "WOW.postman_collection_v2.json"
+    # if the file doesnt exist then warn and exit
+    if not os.path.isfile(postman_file_name):
+        print(f"ERROR: {postman_file_name} does not exist")
+        exit(1)
+
+    # if the file doesn't exist in the currrent dir then copy it in from the parent dir
+    if not os.path.isfile(postman_file_name):
+        os.system(f"cp {postman_file_name} .")
+        # then remove the path from the filename
+        postman_file_name = os.path.basename(postman_file_name)
     script_directory = os.path.dirname(os.path.abspath(__file__))
     postman_file_path = os.path.join(script_directory, postman_file_name)
     output_folder = script_directory
