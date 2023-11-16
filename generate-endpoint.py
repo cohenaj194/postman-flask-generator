@@ -53,6 +53,12 @@ def generate_flask_app(postman_data, output_path):
 import requests, json
 
 app = Flask(__name__)
+
+def str_to_bool(bool_str):
+    if bool_str.lower() == "true":
+        return True
+    else:
+        return False
 """
 
     for item in postman_data['item']:
